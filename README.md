@@ -2,7 +2,6 @@
 
 A dual-interface chatbot powered by AI, offering both **console-based** and **Telegram-integrated** interactions. Built with Python and designed for seamless integration with AI APIs.
 
-![ChatBot Demo](https://img.shields.io/badge/Demo-Console_%26_Telegram-blue)
 ![Python Version](https://img.shields.io/badge/Python-3.10%2B-brightgreen)
 
 ## Table of Contents
