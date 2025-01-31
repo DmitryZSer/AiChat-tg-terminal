@@ -52,8 +52,8 @@ Required environment variables:
 ```ini
 AI_API_KEY=your_ai_service_api_key
 TELEGRAM_BOT_TOKEN=your_telegram_bot_token
-API_URL=https://api.anthropic.com/v1/messages
-AI_MODEL=claude-3-opus-20240229
+API_URL=your_api_url
+AI_MODEL=your_ai_model
 ```
 
 The `load_env_variables` function is a crucial component for setting up and validating the environment variables required for your application. [Here's a detailed and elegant description of its functionality](#function-load_env_variables).
