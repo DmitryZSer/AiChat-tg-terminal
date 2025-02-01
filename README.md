@@ -1,6 +1,6 @@
 # AI ChatBot 🤖
 
-A dual-interface chatbot powered by **AI**, offering both **console-based** and **Telegram-integrated** interactions. Built with Python and designed for seamless integration with AI APIs such as **ChatGPT**, **DeepSeek**, **Mistral**, **Qwen**, and more.
+A dual-interface chatbot powered by **AI**, offering both **console-based** and **Telegram-integrated** interactions. Built with Python and designed for seamless integration with OpenAi-compatible APIs such as **ChatGPT**, **DeepSeek**, **Mistral**, **Qwen**, and more.
 
 ![Python Version](https://img.shields.io/badge/Python-3.10%2B-brightgreen)
 
