@@ -1,12 +1,7 @@
-To fix the broken links in the markdown, I'll update the URLs to point to valid resources. Here's the corrected version:
+# AI ChatBot 🤖
 
----
+A dual-interface chatbot powered by **AI**, offering both **console-based** and **Telegram-integrated** interactions. Built with Python and designed for seamless integration with **OpenAi-compatible APIs** such as ChatGPT, DeepSeek, Mistral, Qwen, and more.
 
-# AI ChatBot Project 🤖
-
-A dual-interface chatbot powered by AI, offering both **console-based** and **Telegram-integrated** interactions. Built with Python and designed for seamless integration with AI APIs.
-
-![ChatBot Demo](https://img.shields.io/badge/Demo-Console_%26_Telegram-blue)
 ![Python Version](https://img.shields.io/badge/Python-3.10%2B-brightgreen)
 
 ## Table of Contents
@@ -15,7 +10,7 @@ A dual-interface chatbot powered by AI, offering both **console-based** and **Te
 - [Configuration](#configuration-)
 - [Usage](#usage-)
 - [Examples](#examples)
-- [Dependencies](#dependencies-)
+- [Dependencies](#dependencies--addition)
 - [Contributing](#contributing-)
 
 # Features
@@ -57,11 +52,55 @@ Required environment variables:
 ```ini
 AI_API_KEY=your_ai_service_api_key
 TELEGRAM_BOT_TOKEN=your_telegram_bot_token
-API_URL=https://api.anthropic.com/v1/messages
-AI_MODEL=claude-3-opus-20240229
+API_URL=your_api_url
+AI_MODEL=your_ai_model
 ```
 
-The `load_env_variables` function is a crucial component for setting up and validating the environment variables required for your application. Here's a detailed and elegant description of its functionality:
+The `load_env_variables` function is a crucial component for setting up and validating the environment variables required for your application. [Here's a detailed and elegant description of its functionality](#function-load_env_variables).
+
+
+# Usage 🚀
+
+### Terminal Chat
+```bash
+python ai_terminal_chatbot.py
+```
+- **Type messages** directly in the console
+- `clear`: Wipes conversation history
+- `exit`: Quits the program
+
+### Telegram Bot
+```bash
+python ai_tg_chatbot.py
+```
+- **Start chat**: Send `/start` to your bot
+- **Clear history**: Use `/clear` command
+- **Persistent context**: Maintains separate histories per user
+
+### Conversation History 💾
+Both versions store conversations in JSON format:
+- Terminal: `data/user.json`
+- Telegram: `data/{user_id}.json`
+
+# Examples
+### Terminal chatting:
+![Terminal chatting](https://github.com/user-attachments/assets/ccbda57d-3d25-4e28-9105-97c29b74427b)
+### Terminal chat history:
+![Chat history](https://github.com/user-attachments/assets/72bdb44e-ce76-4e30-aba0-ae55e2ecf9f9)
+### Telegram chatting:
+![Telegram chatting](https://github.com/user-attachments/assets/266ee309-6c17-4d4c-8607-cd1c68b32cf3)
+### Telegram chat history:
+![Telegram chat history](https://github.com/user-attachments/assets/99a4671a-9dcc-455e-9ea4-8e7b879100e9)
+### Data Structure Example:
+![Data Structure Example](https://github.com/user-attachments/assets/3b577acd-e3e6-4ad7-8488-ee084aa8735e)
+
+
+# Dependencies & addition📦
+Package | Version
+---|---
+requests | 2.32.3
+python-dotenv | 1.0.1
+aiogram | 3.17.0
 
 ---
 
@@ -91,48 +130,7 @@ The `load_env_variables` function is designed to ensure that all necessary envir
 #### Usage
 This function should be called at the start of applications to ensure that all required environment variables are properly set up and validated. This setup is essential for the smooth operation of your application, especially when dealing with external APIs and services.
 
-# Usage 🚀
-
-### Terminal Chat
-```bash
-python ai_terminal_chatbot.py
-```
-- **Type messages** directly in the console
-- `clear`: Wipes conversation history
-- `exit`: Quits the program
-
-### Telegram Bot
-```bash
-python ai_tg_chatbot.py
-```
-- **Start chat**: Send `/start` to your bot
-- **Clear history**: Use `/clear` command
-- **Persistent context**: Maintains separate histories per user
-
-### Conversation History 💾
-Both versions store conversations in JSON format:
-- Terminal: `data/user.json`
-- Telegram: `data/{user_id}.json`
-
-# Examples
-### Terminal chatting
-![Terminal chatting]()
-### Terminal chat history
-![Chat history]()
-### Telegram chatting
-![Telegram chatting]()
-### Telegram chat history
-![Telegram chat history]()
-### Data Structure Example
-![Data Structure Example]()
-
-# Dependencies 📦
-Package | Version
----|---
-requests | 2.32.3
-python-dotenv | 1.0.1
-aiogram | 3.17.0
-
+---
 
 ## Contributing 🤝
 Contributions welcome! Please fork the repository and submit pull requests for:
