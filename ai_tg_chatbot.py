@@ -152,7 +152,7 @@ async def message_handler(message: Message):
                 print(i, "\n")
                 await message.answer(i, parse_mode="")
             return
-        await message.answer(str(ai_reply), parse_mode="Markdown")
+        await message.answer(ai_reply[0], parse_mode="Markdown")
     except Exception as e:
         logging.error(f"Error handling message from user {user_id}: {e}")
         await message.answer("An error occurred while processing your message.")
