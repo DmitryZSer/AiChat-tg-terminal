@@ -2,6 +2,8 @@ import os
 import asyncio
 import logging
 import json
+import re
+
 import requests
 from dotenv import load_dotenv, find_dotenv
 from aiogram import Bot, Dispatcher
@@ -38,7 +40,6 @@ def load_env_variables():
         temp_config[var] = value
 
     CONFIG = temp_config
-
 
 def load_conversation(user_id):
     """Retrieve conversation history from a JSON file."""
@@ -122,6 +123,9 @@ async def clear_command(message: Message):
         logging.error(f"Error clearing chat history for user {user_id}: {e}")
         await message.answer("An error occurred while clearing chat history.")
 
+def split_text(text: str, max_length: int = 4000) -> list[str]:
+    """Разбивает текст на части, сохраняя целостность Markdown блоков."""
+    return [text[i:i + max_length] for i in range(0, len(text), max_length)]
 
 @dp.message()
 async def message_handler(message: Message):
@@ -139,7 +143,16 @@ async def message_handler(message: Message):
         ai_reply = await send_ai_response(messages)
         messages.append({"role": "assistant", "content": ai_reply})
         save_conversation(user_id, messages)
-        await processing_message.edit_text(ai_reply, parse_mode="Markdown")
+        await processing_message.delete()
+
+        ai_reply = split_text(ai_reply)
+
+        if(len(ai_reply)>1):
+            for i in ai_reply:
+                print(i, "\n")
+                await message.answer(i, parse_mode="")
+            return
+        await message.answer(str(ai_reply), parse_mode="Markdown")
     except Exception as e:
         logging.error(f"Error handling message from user {user_id}: {e}")
         await message.answer("An error occurred while processing your message.")
