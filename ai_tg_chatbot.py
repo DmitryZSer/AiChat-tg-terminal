@@ -102,7 +102,7 @@ async def start_command(message: Message):
         if not messages:
             messages.append({"role": "system", "content": "Hi, You are a helpful assistant!"})
             save_conversation(user_id, messages)
-        await message.answer("Welcome to Mistral AI Chat Bot!")
+        await message.answer("Welcome to AI Chat Bot!")
     except Exception as e:
         logging.error(f"Error in /start command: {e}")
         await message.answer("An error occurred while starting the chat bot.")
