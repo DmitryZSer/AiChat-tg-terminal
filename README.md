@@ -4,6 +4,8 @@ A dual-interface chatbot powered by **AI**, offering both **console-based** and 
 
 ![Python Version](https://img.shields.io/badge/Python-3.10%2B-brightgreen)
 
+[Try telegram bot by yourself🫵](https://t.me/ai_tg_chatbot)
+
 ## Table of Contents
 - [Features](#features)
 - [Installation](#installation)
